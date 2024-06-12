@@ -1,5 +1,4 @@
-# BWFormer
-**BWFormer: 3D Building Wireframe Reconstruction from 2D Height Map with Transformer**  
+# BWFormer: 3D Building Wireframe Reconstruction from 2D Height Map with Transformer
 Yuzhou Liu, Lingjie Zhu, Hanqiao Ye, Xiang Gao, and ShuhanShen  
 Institute of Automation, Chinese Academy of Sciences  
 Please keep tuned and we will release the code upon paper acceptance!
