@@ -1,7 +1,7 @@
 # BWFormer: 3D Building Wireframe Reconstruction from 2D Height Map with Transformer
-Official implementation of 'BWFormer: 3D Building Wireframe Reconstruction from 2D Height Map with Transformer'. Winner of Building3D Challenge of USM3D workshop in CVPR 2024! 
- 
- Please keep tuned and we will release the code upon paper acceptance!
+Official implementation of 'BWFormer: 3D Building Wireframe Reconstruction from 2D Height Map with Transformer'.   
+**Winner of Building3D Challenge of USM3D workshop in CVPR 2024!**  
+Please keep tuned and we will release the code upon paper acceptance!
 ## Abstract
 In this paper, we present BWFormer, a novel Transformer-based architecture for 3D building wireframe reconstruction from 2D height maps. Traditional methods reconstruct building wireframe directly from airborne LiDAR point clouds, facing the challenges of sparse, incomplete, and unevenly distributed point clouds. To avoid the downsampling of 3D backbone, we project the point clouds along the vertical axis to generate height maps and solve the 3D building wireframe reconstruction problem with them in 2D. Due to the 2.5D data characteristic, there is no roof plane occlusion, which makes it possible to restore the roof structures from the height map. With the height map, a 2D corner heat map is first predicted with pixel-wise corner likelihood, which is then used to initialize the 3D corner queries. After that, with the added height embeddings, 3D corner queries are predicted within smaller search space with a Transformer network. Finally, with corners detected, edges are predicted with the endpoint coordinates and image features based on the deformable attention. Our method surpasses other state-of-the-art methods, especially in reconstruction completeness.
 ## Method
