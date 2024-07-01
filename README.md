@@ -2,7 +2,7 @@
 Official implementation of 'BWFormer: 3D Building Wireframe Reconstruction from 2D Height Map with Transformer'.   
 Please keep tuned and we will release the code upon paper acceptance!
 
-# News
+## News
 - [2024/6/14]: We win the Building3D challenge in the [1st Workshop on Urban Scene Modeling: Where Vision Meets Photogrammetry and Graphics, CVPR2024](https://usm3d.github.io/)!
 </br>
 
