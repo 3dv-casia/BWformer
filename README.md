@@ -1,5 +1,4 @@
 # BWFormer: Building Wireframe Reconstruction from airborne LiDAR point clouds with Transformer
-Official implementation of 'BWFormer: 3D Building Wireframe Reconstruction from 2D Height Map with Transformer'.   
 Please keep tuned and we will release the code soon!
 
 ## News
