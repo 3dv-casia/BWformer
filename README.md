@@ -1,11 +1,56 @@
-# BWFormer: Building Wireframe Reconstruction from airborne LiDAR point clouds with Transformer
-Please keep tuned and we will release the code soon!
+# [CVPR2025]BWFormer: Building Wireframe Reconstruction from airborne LiDAR point clouds with Transformer 
+Official implementation of 'BWFormer: Building Wireframe Reconstruction from airborne LiDAR point clouds with Transformer'. 1st in Building3D challenge 2024, 2025.
 
-## News
-- [2025/2]: The paper is accepted by CVPR2025!
-- [2024/6]: We win the Building3D challenge in the [1st Workshop on Urban Scene Modeling: Where Vision Meets Photogrammetry and Graphics, CVPR2024](https://usm3d.github.io/)!
-</br>
+## Abstract
+In this paper, we present BWFormer, a novel Transformerbased model for building wireframe reconstruction from airborne LiDAR point cloud. The problem is solved in a ground-up manner here by detecting the building corners in 2D, lifting and connecting them in 3D space afterwards with additional data augmentation. Due to the 2.5D characteristic of the airborne LiDAR point cloud, we simplify the problem by projecting the points on the ground plane to produce a 2D height map. With the height map, a heat map is first generated with pixel-wise corner likelihood to predict the possible 2D corners. Then, 3D corners are predicted by a Transformer-based network with extra height embedding initialization. This 2D-to-3D corner detection strategy reduces the search space significantly. To recover the topological connections among the corners, edges are finally predicted from the height map with the proposed edge attention mechanism, which extracts holistic features and preserves local details simultaneously. In addition, due to the limited datasets in the field and the irregularity of the point clouds, a conditional latent diffusion model for LiDAR scanning simulation is utilized for data augmentation. BWFormer surpasses other state-of-the-art methods, especially
+in reconstruction completeness.
+## Method
+<img src="./imgs/overall.png" width=100% height=100%>
+
+**Overall architecture of BWFormer.** With real height maps projected from point clouds and synthetic ones from simulated LiDAR scans (a), BWFormer first detects 2D corners and initializes the 3D corner queries with 2D positions. Then, with a Transformerbased network, the 3D corners are predicted (b). Finally, edges are classified as valid or not (c) while valid ones form the final wireframe (d). ($x_i$, $y_i$, $z^j_i$) indicates the j-th corner initialized in the i-th possible 2D position. The predicted coordinates are in the yellow box while the unpredicted ones are in the gray ones. Besides, 2D corners are marked as red while 3D ones as purple. Lines marking the 2D-3D correspondences are black for one-to-one correspondences while yellow for one-to-many ones. l indicates the number of candidate edges.
+
+## Environment
+```
+pip install -r requirements.txt
+cd  models/ops/
+sh make.sh
+cd ...
+
+```
+
+## Dataset
+The processed dataset is stored in [this link]().
+
+## Training 
+
+
+## Inference 
+
+
+## Checkpoints
+The checkpoints can be downloaded in [this link]().
+
+## Citation
+If you find BWFormer useful in your research, please cite our paper:
+```
+@inproceedings{liu2025bwformer,
+  title={BWFormer: Building Wireframe Reconstruction from Airborne LiDAR Point Cloud with Transformer},
+  author={Liu, Yuzhou and Zhu, Lingjie and Ye, Hanqiao and Huang, Shangfeng and Gao, Xiang and Zheng, Xianwei and Shen, Shuhan},
+  booktitle={Proceedings of the Computer Vision and Pattern Recognition Conference},
+  pages={22215--22224},
+  year={2025}
+}
+```
+
+## Acknowledgment
+We thank the following excellent projects especially HEAT:
+* [DETR](https://github.com/facebookresearch/detr)
+* [Deformable-DETR](https://github.com/fundamentalvision/Deformable-DETR)
+* [Detectron2](https://github.com/facebookresearch/detectron2)
+* [HEAT](https://github.com/woodfrog/heat)
 
 
  
+
+
 
