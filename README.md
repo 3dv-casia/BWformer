@@ -7,7 +7,7 @@ in reconstruction completeness.
 ## Method
 <img src="./imgs/overall.png" width=100% height=100%>
 
-**Overall architecture of BWFormer.** With real height maps projected from point clouds and synthetic ones from simulated LiDAR scans (a), BWFormer first detects 2D corners and initializes the 3D corner queries with 2D positions. Then, with a Transformerbased network, the 3D corners are predicted (b). Finally, edges are classified as valid or not (c) while valid ones form the final wireframe (d). ($x_i$, $y_i$, $z^j_i$) indicates the j-th corner initialized in the i-th possible 2D position. The predicted coordinates are in the yellow box while the unpredicted ones are in the gray ones. Besides, 2D corners are marked as red while 3D ones as purple. Lines marking the 2D-3D correspondences are black for one-to-one correspondences while yellow for one-to-many ones. l indicates the number of candidate edges.
+**Overall architecture of BWFormer.** With real height maps projected from point clouds and synthetic ones from simulated LiDAR scans (a), BWFormer first detects 2D corners and initializes the 3D corner queries with 2D positions. Then, with a Transformerbased network, the 3D corners are predicted (b). Finally, edges are classified as valid or not (c) while valid ones form the final wireframe (d). ($x_i$, $y_i$, $z^j_i$) indicates the j-th corner initialized in the i-th possible 2D position. The predicted coordinates are in the yellow box while the unpredicted ones are in the gray ones. Besides, 2D corners are marked as red while 3D ones as purple. Lines marking the 2D-3D correspondences are black for one-to-one correspondences while yellow for one-to-many ones. $l$ indicates the number of candidate edges.
 
 ## Environment
 ```
@@ -19,7 +19,7 @@ cd ...
 ```
 
 ## Dataset
-The processed dataset is stored in [this link]().
+The processed dataset of building3d is stored in [this link](https://drive.google.com/file/d/1D7oqz4A2e4kXEFd2J8jtcHpx-QjqB8Cp/view?usp=drive_link). To get the final wireframe model, also download the building3d dataset and put it in the same directory.
 
 ## Training 
 
