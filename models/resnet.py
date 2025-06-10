@@ -13,8 +13,8 @@ def convrelu(in_channels, out_channels, kernel, padding):
 class ResNetBackbone(nn.Module):
     def __init__(self):
         super().__init__()
-        base_model = models.resnet50(pretrained=False)
-        base_model.load_state_dict(torch.load('/public/home/liuyuzhou/code/contest/models/resnet50.pth'))
+        
+        base_model = models.resnet50(pretrained=True)
         base_layers = list(base_model.children())
        
         self.conv_original_size0 = convrelu(3, 64, 3, 1)
