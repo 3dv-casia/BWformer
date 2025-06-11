@@ -1,5 +1,7 @@
-# [CVPR2025]BWFormer: Building Wireframe Reconstruction from airborne LiDAR point clouds with Transformer 
-Official implementation of 'BWFormer: Building Wireframe Reconstruction from airborne LiDAR point clouds with Transformer'. 1st in Building3D challenge 2024, 2025.
+# [CVPR2025] BWFormer: Building Wireframe Reconstruction from airborne LiDAR point clouds with Transformer 
+Official implementation of 'BWFormer: Building Wireframe Reconstruction from airborne LiDAR point clouds with Transformer'. 
+
+:trophy::trophy: Won 1st place in Building3D Challenge at CVPR2024 and CVPR2025.
 
 ## Abstract
 In this paper, we present BWFormer, a novel Transformerbased model for building wireframe reconstruction from airborne LiDAR point cloud. The problem is solved in a ground-up manner here by detecting the building corners in 2D, lifting and connecting them in 3D space afterwards with additional data augmentation. Due to the 2.5D characteristic of the airborne LiDAR point cloud, we simplify the problem by projecting the points on the ground plane to produce a 2D height map. With the height map, a heat map is first generated with pixel-wise corner likelihood to predict the possible 2D corners. Then, 3D corners are predicted by a Transformer-based network with extra height embedding initialization. This 2D-to-3D corner detection strategy reduces the search space significantly. To recover the topological connections among the corners, edges are finally predicted from the height map with the proposed edge attention mechanism, which extracts holistic features and preserves local details simultaneously. In addition, due to the limited datasets in the field and the irregularity of the point clouds, a conditional latent diffusion model for LiDAR scanning simulation is utilized for data augmentation. BWFormer surpasses other state-of-the-art methods, especially
