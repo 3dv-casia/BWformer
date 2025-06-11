@@ -18,7 +18,7 @@ for length in range(2, 351):
 def nms_group(pred_corners, pred_logits, dist_thresh=5.0, score_thresh=0.01):
     new_corners = []
 
-    n = 3  # 每n个为一组，可调整
+    n = 2  # 每n个为一组，可调整
     for i in range(0, len(pred_logits), n):
         group_corners = pred_corners[i:i+n]
         group_logits = pred_logits[i:i+n]

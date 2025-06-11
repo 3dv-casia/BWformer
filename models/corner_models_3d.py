@@ -50,7 +50,7 @@ class HeatCorner3d(nn.Module):
         prior_prob = 0.01
         bias_value = -math.log((1 - prior_prob) / prior_prob)
         self.class_embed.bias.data = torch.ones(num_classes) * bias_value
-        self.num_queries = 600
+        self.num_queries = 300
         
         self.query_embed = nn.Embedding(self.num_queries, 1)
         self.tgt_embed = nn.Embedding(self.num_queries, hidden_dim)
@@ -152,6 +152,7 @@ class HeatCorner3d(nn.Module):
         query_embeds3d = self.query_embed.weight
         query_embeds3d = query_embeds3d.unsqueeze(0).expand(corners2d.shape[0], -1, -1)
         
+        
         tgt_embeds = self.tgt_embed.weight
         query_embeds3d_sig = query_embeds3d.sigmoid()
         corners2d = (corners2d/255)
@@ -177,7 +178,7 @@ class HeatCorner3d(nn.Module):
         corner_hs, corner_reference_points = self.transformer(srcs, masks, all_pos, tgt_embeds, query_embeds, all_image_feats,query_pos_embed=position_code)
         
         corner_logits = self.class_embed(corner_hs)
-        corner_coord = self.center_embed(corner_hs[:,:self.num_queries,:]) 
+        corner_coord = self.center_embed(corner_hs) 
 
         corner_coord += query_embeds3d
         corner_coord = corner_coord.sigmoid()
