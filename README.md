@@ -15,10 +15,9 @@ pip install -r requirements.txt
 cd  models/ops/
 sh make.sh
 cd ...
-
 ```
 
-## Dataset
+## Data
 The processed dataset of building3d is stored in [this link](https://drive.google.com/file/d/1D7oqz4A2e4kXEFd2J8jtcHpx-QjqB8Cp/view?usp=drive_link). To get the final wireframe model, also download the building3d dataset and put it in the same directory.
 
 ## Training 
