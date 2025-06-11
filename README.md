@@ -32,7 +32,7 @@ python infer.py --checkpoint_path ./checkpoints/checkpoint.pth  --dataset outdoo
 ```
 
 ## Checkpoints
-The checkpoints can be downloaded in [this link]().
+The checkpoints can be downloaded in [this link](https://drive.google.com/file/d/1qvwUUL8Zjpv33rb1F7Ew0DUUvv5tkqbs/view?usp=drive_link).
 
 ## Citation
 If you find BWFormer useful in your research, please cite our paper:
