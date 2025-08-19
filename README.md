@@ -22,6 +22,9 @@ cd ...
 ## Data
 The processed dataset of building3d is stored in [this link](https://drive.google.com/file/d/1D7oqz4A2e4kXEFd2J8jtcHpx-QjqB8Cp/view?usp=drive_link). To get the final wireframe model, also download the building3d dataset. Put them in the building3d directory.
 
+## Data
+For your custom dataset, use proj.py to construct your own dataset with our format.
+
 ## Training 
 ```
 CUDA_VISIBLE_DEVICES=0,1 python -m torch.distributed.launch --nproc_per_node=2 train.py  --exp_dataset outdoor  --epochs 650 --lr_drop 600  --batch_size 56  --output_dir ./checkpoints/building3d/  --image_size 256  --max_corner_num 150  --lambda_corner 0.05 
